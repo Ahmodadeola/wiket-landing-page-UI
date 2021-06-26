@@ -1,11 +1,12 @@
 {
-  "name": "wiket-page-ui",
+  "name": "wiket-landing-page-ui",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.8",
     "react-dom": "^16.8",
     "react-scripts": "2.1.5",
+    "react-spring": "9.2.3",
     "styled-components": "5.3.0",
     "twin.macro": "2.5.0"
   },
@@ -42,4 +43,8 @@
   },
   "keywords": [],
   "description": ""
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0c500c89966f6331b2066ba99fefab628957a94d
