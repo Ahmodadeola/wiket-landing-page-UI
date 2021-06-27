@@ -1,7 +1,7 @@
 import React from "react";
 
 const TextSectionContainer = ({ children }) => (
-  <div style={{ color: "#004E4C" }} className="mt-12 md:mt-24 md:w-2/5">
+  <div style={{ color: "#004E4C" }} className="mt-12 md:mt-15 md:w-2/5 md:h-96">
     {children}
   </div>
 );
@@ -14,7 +14,10 @@ const BigText = ({ children }) => (
   <div className="text-5xl mb-4 font-bold leading-none">{children}</div>
 );
 const BriefText = ({ children }) => (
-  <div style={{ width: "17em" }} className="text-lg font-normal">
+  <div
+    style={{ width: "17em" }}
+    className="text-lg md:ml-12 md:text-sm font-normal md:relative md:mt-32"
+  >
     {children}
   </div>
 );
