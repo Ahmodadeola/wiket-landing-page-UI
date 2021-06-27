@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Faible";
+  src: local("Faible"),
+    url(./assets/fonts/Faible/Faible-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Faible";
+  font-weight: 900;
+  src: local("Faible"),
+    url(./assets/fonts/Faible/Faible-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Faible";
+  font-weight: 900;
+  src: local("Faible"),
+    url(./assets/fonts/Faible/Faible-Black.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "SpoofTrail";
+  src: local("SpoofTrail"),
+    url(./assets/fonts/SpoofTrial/SpoofTrial-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "SpoofTrial";
+  font-weight: 900;
+  src: local("SpoofTrial"),
+    url(./assets/fonts/SpoofTrial/SpoofTrial-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "SpoofTrial";
+  font-weight: 900;
+  src: local("SpoofTrial"),
+    url(./assets/fonts/SpoofTrial/SpoofTrial-Black.otf) format("opentype");
+}
 html,
 body {
   width: 100%;

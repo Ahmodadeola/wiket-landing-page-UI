@@ -20,8 +20,9 @@ const NavbarContainer = ({ children }) => (
 const NavItems = ({ children }) => (
   <ul
     className="
-flex
+md:flex
 items-center
+hidden
 "
   >
     {children}
@@ -35,15 +36,39 @@ const NavItem = ({ item, isButton }) =>
     </a>
   ) : (
     <a href="/#">
-      <li
+      <button
         className="mr-8 font-medium
       rounded px-3 py-2 bg-yellow-600 text-white"
       >
         {item}
-      </li>
+      </button>
     </a>
   );
 
+const NavItemButton = ({ item }) => (
+  <button
+    style={{ backgroundColor: "#FAA834" }}
+    className="
+     font-medium
+    rounded-lg px-3 py-2 text-white
+"
+  >
+    {item}
+  </button>
+);
+
+const MobileNavContainer = ({ children }) => (
+  <div
+    className="
+flex
+justify-around
+items-center
+md:hidden
+"
+  >
+    <NavItemButton item="Get started" isButton={true} />
+  </div>
+);
 const navbar = () => {
   const links = ["Benefits", "Your Profile", "Connections", "Plans & Pricing"];
 
@@ -54,8 +79,9 @@ const navbar = () => {
         {links.map((item, idx) => (
           <NavItem item={item} key={idx} />
         ))}
-        <NavItem item="Get Started" isButton={true} />
+        <NavItemButton item="Get started" />
       </NavItems>
+      <MobileNavContainer />
     </NavbarContainer>
   );
 };

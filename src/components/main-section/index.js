@@ -1,10 +1,16 @@
 import React from "react";
-const SectionContainer = ({ children }) => <div className=""></div>;
+import TextSection from "./textSection/index";
+import HeroSection from "./heroSection/index";
+
+const SectionContainer = ({ children }) => (
+  <div className="md:w-2/3 mx-auto">{children}</div>
+);
 
 const mainSection = () => {
   return (
     <SectionContainer>
-      <p>The section container</p>
+      <TextSection />
+      <HeroSection />
     </SectionContainer>
   );
 };

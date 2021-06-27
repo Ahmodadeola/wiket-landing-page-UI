@@ -4,8 +4,9 @@ import Navbar from "../../components/navbar";
 
 const HomepageContainer = ({ children }) => (
   <div
+    style={{ backgroundColor: "rgb(250 168 52 / 12%)" }}
     className="
-  h-full"
+  h-screen w-full px-6"
   >
     {children}
   </div>
