@@ -1,0 +1,29 @@
+.mini-card {
+  height: 9.5em;
+}
+
+.card-image {
+  height: 5.9rem;
+}
+
+.card-image img {
+  height: 6em;
+}
+
+@media (min-width: 768px) {
+  .mini-card {
+    height: 7em;
+  }
+
+  .card-image {
+    height: 3.6rem;
+  }
+
+  .card-image img {
+    height: 3.6em;
+  }
+
+  .main-card-img {
+    height: 34em;
+  }
+}

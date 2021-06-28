@@ -6,7 +6,7 @@ const HomepageContainer = ({ children }) => (
   <div
     style={{ backgroundColor: "rgb(250 168 52 / 12%)" }}
     className="
-  h-screen w-full px-6"
+  w-full h-screen px-6"
   >
     {children}
   </div>
