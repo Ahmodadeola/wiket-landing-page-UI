@@ -23,7 +23,7 @@ const MainCardContainer = ({ children }) => (
   </div>
 );
 const CardContainer = ({ children }) => (
-  <div className="mini-card p-1 w-32 bg-white rounded-lg">{children}</div>
+  <div className="mini-card p-1 bg-white rounded-lg">{children}</div>
 );
 
 const MainCardImage = ({ link, alt }) => (
@@ -46,12 +46,13 @@ const MainCardImage = ({ link, alt }) => (
 );
 
 const CardImage = ({ link, alt }) => (
-  <div className="w-full card-image">
+  <div style={{}} className="w-full card-image">
     <img
       src={link}
       alt={alt}
       style={{
         width: "100%",
+        objectFit: "cover",
       }}
       className="rounded"
     />
@@ -68,7 +69,7 @@ const MainText = ({ children }) => (
 
 const MainSubText = ({ children }) => <p className="text-sm">{children}</p>;
 const SubText = ({ children }) => (
-  <p style={{ color: "#004E4C" }} className="text-sm md:text-xs -mt-1">
+  <p style={{ color: "#004E4C" }} className="text-xs sub-text -mt-1">
     {children}
   </p>
 );
@@ -118,7 +119,7 @@ const Marker = () => (
   </div>
 );
 const Goggle = () => (
-  <div className="hidden absolute md:block md:top-0 md:mt-48 md:right-0 md:-mr-16">
+  <div className="hidden absolute md:block md:top-0 md:mt-4 md:right-0 md:-mr-16">
     <img src={GoggleImg} />
   </div>
 );

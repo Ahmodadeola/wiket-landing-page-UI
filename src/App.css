@@ -23,8 +23,8 @@
 }
 
 @font-face {
-  font-family: "SpoofTrail";
-  src: local("SpoofTrail"),
+  font-family: "SpoofTrial";
+  src: local("SpoofTrial"),
     url(./assets/fonts/SpoofTrial/SpoofTrial-Regular.otf) format("opentype");
 }
 
@@ -44,5 +44,7 @@
 html,
 body {
   width: 100%;
-  height: 100%;
+  height: 120%;
+  font-family: SpoofTrial;
+  background-color: rgba(250, 168, 52, 0.1);
 }

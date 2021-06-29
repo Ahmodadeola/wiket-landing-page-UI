@@ -1,5 +1,6 @@
 .mini-card {
   height: 9.5em;
+  width: 9em;
 }
 
 .card-image {
@@ -13,14 +14,19 @@
 @media (min-width: 768px) {
   .mini-card {
     height: 7em;
+    width: 7em;
+  }
+
+  .sub-text {
+    font-size: 0.62em;
   }
 
   .card-image {
-    height: 3.6rem;
+    height: 4.2rem;
   }
 
   .card-image img {
-    height: 3.6em;
+    height: 4.2em;
   }
 
   .main-card-img {

@@ -3,13 +3,7 @@ import MainSection from "../../components/main-section";
 import Navbar from "../../components/navbar";
 
 const HomepageContainer = ({ children }) => (
-  <div
-    style={{ backgroundColor: "rgb(250 168 52 / 12%)" }}
-    className="
-  w-full h-screen px-6"
-  >
-    {children}
-  </div>
+  <div className="w-full h-screen px-6">{children}</div>
 );
 
 function Homepage() {

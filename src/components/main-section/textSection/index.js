@@ -1,7 +1,7 @@
 import React from "react";
 
 const TextSectionContainer = ({ children }) => (
-  <div style={{ color: "#004E4C" }} className="mt-12 md:mt-15 md:w-2/5 md:h-96">
+  <div style={{ color: "#004E4C" }} className="mt-12 md:mt-20 md:w-2/5 md:h-96">
     {children}
   </div>
 );

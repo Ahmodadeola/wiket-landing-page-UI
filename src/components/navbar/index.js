@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../Logo/index";
+import Menu from "../../assets/svg/menu.svg";
 
 const NavbarContainer = ({ children }) => (
   <nav
@@ -50,6 +51,7 @@ const NavItemButton = ({ item }) => (
     style={{ backgroundColor: "#FAA834" }}
     className="
      font-medium
+     text-sm
     rounded-lg px-3 py-2 text-white
 "
   >
@@ -60,13 +62,15 @@ const NavItemButton = ({ item }) => (
 const MobileNavContainer = ({ children }) => (
   <div
     className="
-flex
-justify-around
+pl-5 flex
+justify-between
 items-center
+w-1/2
 md:hidden
 "
   >
-    <NavItemButton item="Get started" isButton={true} />
+    <NavItemButton item="Get started" className="" isButton={true} />
+    <img src={Menu} className="w-8" />
   </div>
 );
 const navbar = () => {
