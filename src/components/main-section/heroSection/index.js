@@ -6,7 +6,7 @@ import PotteryImg from "../../../assets/jpg/header-img-pottery.jpg";
 import GoggleImg from "../../../assets/svg/pin-01.svg";
 import MarkerImg from "../../../assets/svg/pin-02.svg";
 import HeaderLinePhone from "../../../assets/svg/header-line-phone-portrait.svg";
-// import HeaderLineDesktop from "../../../assets/svg/header-line-desktop.svg";
+import HeaderLineDesktop from "../../../assets/svg/header-line-desktop.svg";
 import "../../../assets/css/HeroSection/MiniCard.css";
 
 const HeroSectionContainer = ({ children }) => (
@@ -37,8 +37,6 @@ const MainCardImage = ({ link, alt }) => (
       style={{
         width: "100%",
         height: "auto",
-        // maxHeight: "40em",
-        // borderRadius: "2em",
       }}
       className="w-2/3 md:h-2/3 mt-4 rounded-lg"
     />
@@ -102,24 +100,33 @@ const CafeCard = () => (
 );
 
 const HeaderLine = () => (
-  <div className="absolute ml-24 mt-6">
+  <div className="absolute md:hidden ml-24 mt-6 md:right-0 md:-mr-20 z-0 md:top-0 md:mt-64">
     <img src={HeaderLinePhone} />
   </div>
 );
 
-// const HeaderLineDe = () => (
-//   <div className="absolute ml-24 mt-6">
-//     <img src={HeaderLineDesktop} />
-//   </div>
-// );
+const HeaderLineDe = () => (
+  <div
+    style={{
+      zIndex: "-1",
+      transform: "rotate(10deg)",
+      transform: "scale(0.7, .8)",
+      marginRight: "-14rem",
+      marginTop: "-",
+    }}
+    className="absolute right-0 -mr-32 -mt-24 hidden md:block"
+  >
+    <img src={HeaderLineDesktop} />
+  </div>
+);
 
 const Marker = () => (
-  <div className="hidden absolute md:block md:top-0 md:mt-12 md:left-0 md:-ml-16">
+  <div className="hidden absolute md:block md:top-0 md:mt-8 md:left-0 md:-ml-16">
     <img src={MarkerImg} />
   </div>
 );
 const Goggle = () => (
-  <div className="hidden absolute md:block md:top-0 md:mt-4 md:right-0 md:-mr-16">
+  <div className="hidden absolute md:block md:top-0 md:mt-48 md:right-0 md:-mr-16">
     <img src={GoggleImg} />
   </div>
 );
@@ -146,8 +153,8 @@ const HeroSection = () => {
       <div>
         <Marker />
         <Goggle />
-        {/* <HeaderLineDesktop /> */}
         <HeaderLine />
+        <HeaderLineDe />
         <PotterCard />
         <GardenerCard />
         <CafeCard />

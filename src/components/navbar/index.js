@@ -62,7 +62,7 @@ const NavItemButton = ({ item }) => (
 const MobileNavContainer = ({ children }) => (
   <div
     className="
-pl-5 flex
+pl-3 flex
 justify-between
 items-center
 w-1/2
