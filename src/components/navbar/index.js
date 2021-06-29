@@ -4,14 +4,18 @@ import Menu from "../../assets/svg/menu.svg";
 
 const NavbarContainer = ({ children }) => (
   <nav
+    style={{ backgroundColor: "antiquewhite" }}
     className="
     flex
     justify-between
     items-center
     mx-auto
-    md:px-10
+    w-full
+    md:pl-10
+    md:pr-20
     py-4
-    max-w-screen-4xl
+    pr-12 z-10
+    fixed 
 "
   >
     {children}
@@ -60,18 +64,12 @@ const NavItemButton = ({ item }) => (
 );
 
 const MobileNavContainer = ({ children }) => (
-  <div
-    className="
-pl-3 flex
-justify-between
-items-center
-w-1/2
-md:hidden
-"
-  >
-    <NavItemButton item="Get started" className="" isButton={true} />
-    <img src={Menu} className="w-8" />
-  </div>
+  <>
+    <span className="md:hidden">
+      <NavItemButton item="Get started" isButton={true} />
+    </span>
+    <img src={Menu} className="w-8 md:hidden" />
+  </>
 );
 const navbar = () => {
   const links = ["Benefits", "Your Profile", "Connections", "Plans & Pricing"];

@@ -11,6 +11,15 @@
   height: 6em;
 }
 
+@media (max-width: 765px) {
+  .potter-card {
+  }
+  .gardener-card {
+  }
+  .cafe-card {
+  }
+}
+
 @media (min-width: 768px) {
   .mini-card {
     height: 7em;
@@ -30,6 +39,6 @@
   }
 
   .main-card-img {
-    height: 34em;
+    /* height: 36em; */
   }
 }

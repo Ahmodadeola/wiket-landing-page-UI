@@ -12,13 +12,13 @@ import "../../../assets/css/HeroSection/MiniCard.css";
 const HeroSectionContainer = ({ children }) => (
   <div
     style={{ fontFamily: "SpoofTrial" }}
-    className="md:w-2/5 mt-16 md:mt-4 relative"
+    className="md:w-2/5 mt-16 md:mt-12 relative"
   >
     {children}
   </div>
 );
 const MainCardContainer = ({ children }) => (
-  <div className="md:h-96 md:flex md:flex-col md:justify-between">
+  <div className="relative md:pl-10 md:h-96 md:flex md:flex-col md:justify-between">
     {children}
   </div>
 );
@@ -28,7 +28,7 @@ const CardContainer = ({ children }) => (
 
 const MainCardImage = ({ link, alt }) => (
   <div
-    style={{ height: "26em" }}
+    style={{ height: "26em", objectFit: "fill" }}
     className="w-full md:flex justify-center main-card-img"
   >
     <img
@@ -37,8 +37,9 @@ const MainCardImage = ({ link, alt }) => (
       style={{
         width: "100%",
         height: "auto",
+        objectFit: "contain",
       }}
-      className="w-2/3 md:h-2/3 mt-4 rounded-lg"
+      className="mt-4 rounded-lg"
     />
   </div>
 );
@@ -84,23 +85,23 @@ const Card = ({ title, subText, link }) => (
 );
 
 const PotterCard = () => (
-  <div className="absolute ml-4 -mt-16 md:top-0 md:mt-12 md:right-0 md:-mr-16">
+  <div className="potter-card absolute ml-4 -mt-16 md:top-0 md:mt-12 md:right-0 md:-mr-10">
     <Card title="PotJect" subText="Pottery in Bangkok" link={PotteryImg} />
   </div>
 );
 const GardenerCard = () => (
-  <div className="absolute right-0 mt-16 md:top-0 md:left-0 md:mt-40 md:-ml-16">
+  <div className="gardener-card absolute right-0 mt-16 md:top-0 md:left-0 md:mt-40 md:-ml-2">
     <Card title="GreenThumb" subText="Gardener in cheche" link={GardenerImg} />
   </div>
 );
 const CafeCard = () => (
-  <div className="absolute mt-40 md:top-0 md:mt-64 md:right-0 md:-mr-24">
+  <div className="cafe-card absolute mt-40 md:top-0 md:mt-64 md:right-0 md:-mr-20">
     <Card title="Green Cafe" subText="Cafe in Bangkok" link={BaristaImg} />
   </div>
 );
 
 const HeaderLine = () => (
-  <div className="absolute md:hidden ml-24 mt-6 md:right-0 md:-mr-20 z-0 md:top-0 md:mt-64">
+  <div className="absolute md:hidden ml-24 mt-6 md:right-0 md:-mr-10 z-0 md:top-0 md:mt-64">
     <img src={HeaderLinePhone} />
   </div>
 );
@@ -112,16 +113,15 @@ const HeaderLineDe = () => (
       transform: "rotate(10deg)",
       transform: "scale(0.7, .8)",
       marginRight: "-14rem",
-      marginTop: "-",
     }}
-    className="absolute right-0 -mr-32 -mt-24 hidden md:block"
+    className="absolute right-0 -mr-32 -mt-48 hidden md:block"
   >
     <img src={HeaderLineDesktop} />
   </div>
 );
 
 const Marker = () => (
-  <div className="hidden absolute md:block md:top-0 md:mt-8 md:left-0 md:-ml-16">
+  <div className="hidden absolute md:block md:top-0 md:mt-8 md:left-0 md:-ml-4">
     <img src={MarkerImg} />
   </div>
 );
@@ -149,16 +149,16 @@ const HeroSection = () => {
             <MainSubText>Florist in Bangkok</MainSubText>
           </TextContainer>
         </div>
+        <div>
+          <Marker />
+          <Goggle />
+          <HeaderLine />
+          <HeaderLineDe />
+          <PotterCard />
+          <GardenerCard />
+          <CafeCard />
+        </div>
       </MainCardContainer>
-      <div>
-        <Marker />
-        <Goggle />
-        <HeaderLine />
-        <HeaderLineDe />
-        <PotterCard />
-        <GardenerCard />
-        <CafeCard />
-      </div>
     </HeroSectionContainer>
   );
 };
