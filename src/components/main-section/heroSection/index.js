@@ -109,12 +109,12 @@ const HeaderLine = () => (
 const HeaderLineDe = () => (
   <div
     style={{
-      zIndex: "-1",
       transform: "rotate(10deg)",
       transform: "scale(0.7, .8)",
-      marginRight: "-14rem",
+      marginRight: "-12rem",
+      marginTop: "-11rem",
     }}
-    className="absolute right-0 -mr-32 -mt-48 hidden md:block"
+    className="absolute right-0 -mr-32 hidden md:block"
   >
     <img src={HeaderLineDesktop} />
   </div>

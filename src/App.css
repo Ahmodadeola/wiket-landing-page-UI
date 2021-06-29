@@ -50,9 +50,27 @@ body {
   background-color: antiquewhite;
 }
 
+.max-w-screen-lg {
+  max-width: 1024;
+}
+
 @media (min-width: 768px) {
   html,
   body {
     height: 110%;
+  }
+
+  nav.nav-container {
+    width: 64rem;
+  }
+
+  .text-container {
+    margin-top: 6.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  nav.nav-container {
+    width: 72rem;
   }
 }

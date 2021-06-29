@@ -6,16 +6,17 @@ const NavbarContainer = ({ children }) => (
   <nav
     style={{ backgroundColor: "antiquewhite" }}
     className="
+    nav-container
     flex
     justify-between
     items-center
     mx-auto
-    w-full
     md:pl-10
     md:pr-20
     py-4
     pr-12 z-10
     fixed 
+    w-full
 "
   >
     {children}

@@ -3,7 +3,7 @@ import MainSection from "../../components/main-section";
 import Navbar from "../../components/navbar";
 
 const HomepageContainer = ({ children }) => (
-  <div className="w-full h-screen px-6">{children}</div>
+  <div className="h-screen px-6 max-w-6xl mx-auto">{children}</div>
 );
 
 function Homepage() {
