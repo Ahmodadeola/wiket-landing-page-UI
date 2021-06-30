@@ -1,13 +1,28 @@
 import React from "react";
+import {
+  useSpring,
+  useSpringRef,
+  useChain,
+  animated,
+  config,
+} from "@react-spring/web";
 
-const TextSectionContainer = ({ children }) => (
-  <div
-    style={{ color: "#004E4C" }}
-    className="text-container mt-12 md:w-2/5 md:h-96"
-  >
-    {children}
-  </div>
-);
+const TextSectionContainer = ({ children }) => {
+  const props = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 2000,
+    config: config.molasses,
+  });
+  return (
+    <animated.div
+      style={{ ...props, color: "#004E4C" }}
+      className="text-container mt-12 md:w-2/5 md:h-96"
+    >
+      {children}
+    </animated.div>
+  );
+};
 
 const TopText = ({ children }) => (
   <div className="text-xl font-medium">{children}</div>

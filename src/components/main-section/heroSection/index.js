@@ -8,6 +8,13 @@ import MarkerImg from "../../../assets/svg/pin-02.svg";
 import HeaderLinePhone from "../../../assets/svg/header-line-phone-portrait.svg";
 import HeaderLineDesktop from "../../../assets/svg/header-line-desktop.svg";
 import "../../../assets/css/HeroSection/MiniCard.css";
+import {
+  animated,
+  useSpring,
+  config,
+  useSpringRef,
+  useChain,
+} from "@react-spring/web";
 
 const HeroSectionContainer = ({ children }) => (
   <div
@@ -17,11 +24,24 @@ const HeroSectionContainer = ({ children }) => (
     {children}
   </div>
 );
-const MainCardContainer = ({ children }) => (
-  <div className="relative md:pl-10 md:h-96 md:flex md:flex-col md:justify-between">
-    {children}
-  </div>
-);
+const MainCardContainer = ({ children, rf }) => {
+  const props = useSpring({
+    to: { opacity: 1, transform: "translate(0,0)" },
+    from: { opacity: 0, transform: "translate(0, 100px)" },
+    delay: 1000,
+    ref: rf,
+  });
+  // const props = useSpring({});
+  return (
+    <animated.div
+      style={props}
+      className="relative md:pl-10 md:h-96 md:flex md:flex-col md:justify-between"
+    >
+      {children}
+    </animated.div>
+  );
+};
+
 const CardContainer = ({ children }) => (
   <div className="mini-card p-1 bg-white rounded-lg">{children}</div>
 );
@@ -84,21 +104,62 @@ const Card = ({ title, subText, link }) => (
   </CardContainer>
 );
 
-const PotterCard = () => (
-  <div className="potter-card absolute ml-4 -mt-16 md:top-0 md:mt-12 md:right-0 md:-mr-10">
-    <Card title="PotJect" subText="Pottery in Bangkok" link={PotteryImg} />
-  </div>
-);
-const GardenerCard = () => (
-  <div className="gardener-card absolute right-0 mt-16 md:top-0 md:left-0 md:mt-40 md:-ml-2">
-    <Card title="GreenThumb" subText="Gardener in cheche" link={GardenerImg} />
-  </div>
-);
-const CafeCard = () => (
-  <div className="cafe-card absolute mt-40 md:top-0 md:mt-64 md:right-0 md:-mr-20">
-    <Card title="Green Cafe" subText="Cafe in Bangkok" link={BaristaImg} />
-  </div>
-);
+const PotterCard = ({ rf }) => {
+  const props = useSpring({
+    to: { opacity: 1, transform: "translate(0,0)" },
+    from: { opacity: 0, transform: "translate(0, 300px)" },
+    config: config.molasses,
+    delay: 1100,
+    ref: rf,
+  });
+  return (
+    <animated.div
+      style={props}
+      className="potter-card absolute ml-4 -mt-16 md:top-0 md:mt-12 md:right-0 md:-mr-10"
+    >
+      <Card title="PotJect" subText="Pottery in Bangkok" link={PotteryImg} />
+    </animated.div>
+  );
+};
+
+const GardenerCard = ({ rf }) => {
+  const props = useSpring({
+    to: { opacity: 1, transform: "translate(0,0)" },
+    from: { opacity: 0, transform: "translate(0, 300px)" },
+    config: config.molasses,
+    delay: 1200,
+    ref: rf,
+  });
+  return (
+    <animated.div
+      style={props}
+      className="gardener-card absolute right-0 mt-16 md:top-0 md:left-0 md:mt-40 md:-ml-2"
+    >
+      <Card
+        title="GreenThumb"
+        subText="Gardener in cheche"
+        link={GardenerImg}
+      />
+    </animated.div>
+  );
+};
+const CafeCard = ({ rf }) => {
+  const props = useSpring({
+    to: { opacity: 1, transform: "translate(0,0)" },
+    from: { opacity: 0, transform: "translate(0, 300px)" },
+    config: config.slow,
+    delay: 1500,
+    ref: rf,
+  });
+  return (
+    <animated.div
+      style={props}
+      className="cafe-card absolute mt-40 md:top-0 md:mt-64 md:right-0 md:-mr-20"
+    >
+      <Card title="Green Cafe" subText="Cafe in Bangkok" link={BaristaImg} />
+    </animated.div>
+  );
+};
 
 const HeaderLine = () => (
   <div className="absolute md:hidden ml-24 mt-6 md:right-0 md:-mr-10 z-0 md:top-0 md:mt-64">
@@ -121,20 +182,25 @@ const HeaderLineDe = () => (
 );
 
 const Marker = () => (
-  <div className="hidden absolute md:block md:top-0 md:mt-8 md:left-0 md:-ml-4">
+  <div className="marker hidden absolute md:block md:top-0 md:mt-6 md:left-0 md:-ml-4">
     <img src={MarkerImg} />
   </div>
 );
 const Goggle = () => (
-  <div className="hidden absolute md:block md:top-0 md:mt-48 md:right-0 md:-mr-16">
+  <div className="goggle hidden absolute md:block md:top-0 md:mt-48 md:right-0 md:-mr-16">
     <img src={GoggleImg} />
   </div>
 );
 
 const HeroSection = () => {
+  const mainSpringRef = useSpringRef();
+  const springRef1 = useSpringRef();
+  const springRef2 = useSpringRef();
+  const springRef3 = useSpringRef();
+  useChain([mainSpringRef, springRef1, springRef2, springRef3]);
   return (
     <HeroSectionContainer>
-      <MainCardContainer>
+      <MainCardContainer rf={mainSpringRef}>
         <div className="md:hidden">
           <TextContainer>
             <MainCardText>Hanging Garden</MainCardText>
@@ -154,9 +220,9 @@ const HeroSection = () => {
           <Goggle />
           <HeaderLine />
           <HeaderLineDe />
-          <PotterCard />
-          <GardenerCard />
-          <CafeCard />
+          <PotterCard rf={springRef1} />
+          <GardenerCard rf={springRef2} />
+          <CafeCard rf={springRef3} />
         </div>
       </MainCardContainer>
     </HeroSectionContainer>
