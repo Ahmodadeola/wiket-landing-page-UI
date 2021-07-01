@@ -32,7 +32,7 @@ const BigText = ({ children }) => (
 const BriefText = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
   const initStyle = { opacity: 0 };
-  initStyle.transform = isDesktop ? "" : "translate(0, 100px)";
+  initStyle.transform = isDesktop ? "translateY(0,0)" : "translate(0, 100px)";
   const props = useSpring({
     to: { opacity: 1, transform: "translate(0, 0)" },
     from: initStyle,
